@@ -1,0 +1,82 @@
+artifact_path: AirPollutionNet
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.12.6
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.4.1
+mlflow_version: 2.16.2
+model_size_bytes: 6133533
+model_uuid: 6e2364bac9f64ec682a834fd3f27442e
+run_id: d2321cb5c8964dbaa2a0e851387329c0
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "O3", "required": true}, {"type": "double",
+    "name": "NO2", "required": true}, {"type": "double", "name": "wind_speed", "required":
+    true}, {"type": "double", "name": "mean_temp", "required": true}, {"type": "double",
+    "name": "global_radiation", "required": true}, {"type": "double", "name": "minimum_visibility",
+    "required": true}, {"type": "double", "name": "humidity", "required": true}, {"type":
+    "double", "name": "O3_lag_1", "required": true}, {"type": "double", "name": "O3_lag_2",
+    "required": true}, {"type": "double", "name": "O3_lag_3", "required": true}, {"type":
+    "double", "name": "O3_lag_4", "required": true}, {"type": "double", "name": "O3_lag_5",
+    "required": true}, {"type": "double", "name": "O3_lag_6", "required": true}, {"type":
+    "double", "name": "NO2_lag_1", "required": true}, {"type": "double", "name": "NO2_lag_2",
+    "required": true}, {"type": "double", "name": "NO2_lag_3", "required": true},
+    {"type": "double", "name": "NO2_lag_4", "required": true}, {"type": "double",
+    "name": "NO2_lag_5", "required": true}, {"type": "double", "name": "NO2_lag_6",
+    "required": true}, {"type": "double", "name": "wind_speed_lag_1", "required":
+    true}, {"type": "double", "name": "wind_speed_lag_2", "required": true}, {"type":
+    "double", "name": "wind_speed_lag_3", "required": true}, {"type": "double", "name":
+    "wind_speed_lag_4", "required": true}, {"type": "double", "name": "wind_speed_lag_5",
+    "required": true}, {"type": "double", "name": "wind_speed_lag_6", "required":
+    true}, {"type": "double", "name": "mean_temp_lag_1", "required": true}, {"type":
+    "double", "name": "mean_temp_lag_2", "required": true}, {"type": "double", "name":
+    "mean_temp_lag_3", "required": true}, {"type": "double", "name": "mean_temp_lag_4",
+    "required": true}, {"type": "double", "name": "mean_temp_lag_5", "required": true},
+    {"type": "double", "name": "mean_temp_lag_6", "required": true}, {"type": "double",
+    "name": "global_radiation_lag_1", "required": true}, {"type": "double", "name":
+    "global_radiation_lag_2", "required": true}, {"type": "double", "name": "global_radiation_lag_3",
+    "required": true}, {"type": "double", "name": "global_radiation_lag_4", "required":
+    true}, {"type": "double", "name": "global_radiation_lag_5", "required": true},
+    {"type": "double", "name": "global_radiation_lag_6", "required": true}, {"type":
+    "double", "name": "minimum_visibility_lag_1", "required": true}, {"type": "double",
+    "name": "minimum_visibility_lag_2", "required": true}, {"type": "double", "name":
+    "minimum_visibility_lag_3", "required": true}, {"type": "double", "name": "minimum_visibility_lag_4",
+    "required": true}, {"type": "double", "name": "minimum_visibility_lag_5", "required":
+    true}, {"type": "double", "name": "minimum_visibility_lag_6", "required": true},
+    {"type": "double", "name": "humidity_lag_1", "required": true}, {"type": "double",
+    "name": "humidity_lag_2", "required": true}, {"type": "double", "name": "humidity_lag_3",
+    "required": true}, {"type": "double", "name": "humidity_lag_4", "required": true},
+    {"type": "double", "name": "humidity_lag_5", "required": true}, {"type": "double",
+    "name": "humidity_lag_6", "required": true}, {"type": "double", "name": "O3_sma_7",
+    "required": true}, {"type": "double", "name": "NO2_sma_7", "required": true},
+    {"type": "double", "name": "wind_speed_sma_7", "required": true}, {"type": "double",
+    "name": "mean_temp_sma_7", "required": true}, {"type": "double", "name": "global_radiation_sma_7",
+    "required": true}, {"type": "double", "name": "minimum_visibility_sma_7", "required":
+    true}, {"type": "double", "name": "humidity_sma_7", "required": true}, {"type":
+    "double", "name": "O3_ema_7", "required": true}, {"type": "double", "name": "NO2_ema_7",
+    "required": true}, {"type": "double", "name": "wind_speed_ema_7", "required":
+    true}, {"type": "double", "name": "mean_temp_ema_7", "required": true}, {"type":
+    "double", "name": "global_radiation_ema_7", "required": true}, {"type": "double",
+    "name": "minimum_visibility_ema_7", "required": true}, {"type": "double", "name":
+    "humidity_ema_7", "required": true}, {"type": "double", "name": "weekday_sin",
+    "required": true}, {"type": "double", "name": "weekday_cos", "required": true},
+    {"type": "double", "name": "month_sin", "required": true}, {"type": "double",
+    "name": "month_cos", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    3]}}]'
+  params: null
+utc_time_created: '2024-10-03 20:27:48.999735'

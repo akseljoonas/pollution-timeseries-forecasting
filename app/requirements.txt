@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy
+joblib  # or pickle if you're using that to load the model
+scikit-learn # for mock model
+altair
+matplotlib
+plotly
+http.client
+datetime
+huggingface-hub
+python-dotenv
+torch
+safetensors

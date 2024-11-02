@@ -1,0 +1,8 @@
+.venv/
+.env
+venv/
+.DS_Store
+mlruns/
+*.joblib
+streamlit_app/scalers/
+*.pyc

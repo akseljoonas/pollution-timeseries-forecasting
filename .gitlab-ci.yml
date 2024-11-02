@@ -1,0 +1,40 @@
+stages:
+  - run_prediction
+  - push_to_huggingface
+
+run_prediction:
+  stage: run_prediction
+  image: python:3.11
+  script:
+    - cd app
+    - python -m venv venv
+    - source venv/bin/activate
+    - pip install --upgrade pip
+    - pip install --upgrade -r requirements.txt
+    - export PYTHONPATH=$PYTHONPATH:$(pwd)
+    - huggingface-cli login --token $HUGGINGFACE_DOWNLOAD_TOKEN
+    - python src/predict.py
+  artifacts:
+    paths:
+      - app/weather_data.csv
+      - app/pollution_data.csv
+      - app/predictions_history.csv
+      - app/past_pollution_data.csv
+      - app/past_weather_data.csv
+
+push_to_huggingface:
+  stage: push_to_huggingface
+  image: python:3.11
+  needs: [run_prediction]
+  script:
+    - pip install huggingface_hub
+    - huggingface-cli login --token $HUGGINGFACE_DOWNLOAD_TOKEN --add-to-git-credential
+    - git config --global user.email "aksel.reedi@gmail.com"
+    - git config --global user.name "xX Dragonkiller daily updater bot Xx"
+    - git add app/weather_data.csv app/pollution_data.csv app/predictions_history.csv app/past_pollution_data.csv app/past_weather_data.csv
+    - git commit -m "xX Dragonkiller daily updater bot Xx did some predictions" || echo "No changes to commit"
+    - echo "Starting to push"
+    - git subtree split --prefix=app -b temp_branch
+    - git push -f https://mihkelmj:$HUGGINGFACE_DOWNLOAD_TOKEN@huggingface.co/spaces/mihkelmj/utrecht-pollution-prediction temp_branch:main
+    - git branch -D temp_branch
+    - echo "Push completed"

@@ -1,0 +1,46 @@
+artifact_path: AirPollutionNet
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.12.6
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.4.1
+mlflow_version: 2.16.2
+model_size_bytes: 2096475
+model_uuid: 250ff291ec214ef29241f1a2ef5b1a58
+run_id: 966043cc4b394d91a6fa85867e953e27
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "O3", "required": true}, {"type": "double",
+    "name": "NO2", "required": true}, {"type": "double", "name": "O3_lag_1", "required":
+    true}, {"type": "double", "name": "O3_lag_2", "required": true}, {"type": "double",
+    "name": "O3_lag_3", "required": true}, {"type": "double", "name": "O3_lag_4",
+    "required": true}, {"type": "double", "name": "O3_lag_5", "required": true}, {"type":
+    "double", "name": "O3_lag_6", "required": true}, {"type": "double", "name": "NO2_lag_1",
+    "required": true}, {"type": "double", "name": "NO2_lag_2", "required": true},
+    {"type": "double", "name": "NO2_lag_3", "required": true}, {"type": "double",
+    "name": "NO2_lag_4", "required": true}, {"type": "double", "name": "NO2_lag_5",
+    "required": true}, {"type": "double", "name": "NO2_lag_6", "required": true},
+    {"type": "double", "name": "O3_sma_7", "required": true}, {"type": "double", "name":
+    "NO2_sma_7", "required": true}, {"type": "double", "name": "O3_ema_7", "required":
+    true}, {"type": "double", "name": "NO2_ema_7", "required": true}, {"type": "double",
+    "name": "weekday_sin", "required": true}, {"type": "double", "name": "weekday_cos",
+    "required": true}, {"type": "double", "name": "month_sin", "required": true},
+    {"type": "double", "name": "month_cos", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1,
+    3]}}]'
+  params: null
+utc_time_created: '2024-10-03 19:25:44.796408'
